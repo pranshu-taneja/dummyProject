@@ -13,9 +13,17 @@ function Home() {
     }
   }, [navigate]);
 
+  const handleLogout = () => {
+    sessionStorage.removeItem('userID');
+    sessionStorage.removeItem('password');
+    
+    navigate('/Login');
+  };
+
   return (
     <div>
       <div>HomePage</div>
+      <button onClick={handleLogout}>Logout</button>
     </div>
   );
 }
